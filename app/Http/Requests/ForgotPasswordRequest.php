@@ -30,11 +30,4 @@ class ForgotPasswordRequest extends FormRequest
         ];
     }
 
-    protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
-    {
-        throw new HttpResponseException((new ResponseService())->getErrorResource([
-            "message" => $validator->getMessageBag()->first(),
-            "field_errors" => $validator->errors()
-        ]));
-    }
 }

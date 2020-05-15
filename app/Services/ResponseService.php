@@ -18,9 +18,8 @@ class ResponseService{
         $field_errors = Arr::get($attributes,"field_errors");
 
         $error = [
-            "status" => $status_code,
-            "message" => $message,
-            "code" => Arr::get($attributes,"code","SYS_01")//ErrorCode::AUTH_01
+//            "message" => $message,
+            "system_code" => Arr::get($attributes,"code","SYS_01")//ErrorCode::AUTH_01
         ];
 
         if($non_field_errors)  Arr::set($error,"non_field_errors",$non_field_errors);
@@ -30,6 +29,7 @@ class ResponseService{
 
 
         return response()->json([
+            "code" => $status_code,
             "status" => false,
             "message" => $message,
             "data" => $error
