@@ -2,10 +2,10 @@
 
 namespace App\Exceptions;
 
+
 use App\Services\ResponseService;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Contracts\Validation\Validator;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
@@ -54,6 +54,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+
         if($exception instanceof ValidationException) {
             //transform error validation
             $error = $exception->errors();
