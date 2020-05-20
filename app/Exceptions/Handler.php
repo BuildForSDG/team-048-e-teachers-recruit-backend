@@ -2,7 +2,12 @@
 
 namespace App\Exceptions;
 
+use App\Services\ResponseService;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Contracts\Validation\Validator;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -50,6 +55,24 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+
+        if($exception instanceof ValidationException) {
+            //transform error validation
+            $error = $exception->errors();
+            return (new ResponseService())->getErrorResource([
+                //get first message of the error
+                "message" => $error[key($error)][0],
+                "field_errors" => $error
+            ]);
+        }
+
+        if ($exception instanceof NotFoundHttpException) {
+
+            if($request->path() != '/' || !empty($request->query())){
+                return response()->json(['error' => 'Not Found'], 404);
+            }
+
+        }
         return parent::render($request, $exception);
     }
 }
