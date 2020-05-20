@@ -6,6 +6,7 @@ namespace App\Exceptions;
 use App\Services\ResponseService;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Contracts\Validation\Validator;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 

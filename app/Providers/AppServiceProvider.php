@@ -23,7 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         foreach ($this->models() as $model){
             $this->app->bind(
                 "App\\Repositories\\$model\\$model" . "Interface",
