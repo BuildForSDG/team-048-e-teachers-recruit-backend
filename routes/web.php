@@ -14,7 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return response()->json([
-        'Team 048 - Teacher Recruitment Portal'
-    ]);
+    return response()->json('Team 048 - Teacher Recruitment Portal');
 });
