@@ -29,12 +29,4 @@ class ForgotPasswordRequest extends FormRequest
             'email' => 'required|email|exists:users,email'
         ];
     }
-
-    protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
-    {
-        throw new HttpResponseException((new ResponseService())->getErrorResource([
-            "message" => $validator->getMessageBag()->first(),
-            "field_errors" => $validator->errors()
-        ]));
-    }
 }
