@@ -496,6 +496,7 @@
             "time": "2020-02-22T01:51:47+00:00"
         },
         {
+
             "name": "firebase/php-jwt",
             "version": "v5.2.0",
             "source": {
@@ -546,6 +547,7 @@
             "time": "2020-03-25T18:49:23+00:00"
         },
         {
+
             "name": "fruitcake/laravel-cors",
             "version": "v1.0.6",
             "source": {
@@ -942,6 +944,7 @@
             "time": "2020-04-03T16:01:00+00:00"
         },
         {
+
             "name": "laravel/framework",
             "version": "v7.9.2",
             "source": {
@@ -1094,6 +1097,7 @@
             "time": "2020-04-28T16:09:20+00:00"
         },
         {
+
             "name": "laravel/passport",
             "version": "v9.2.1",
             "source": {
@@ -1167,6 +1171,7 @@
             "time": "2020-05-14T08:24:43+00:00"
         },
         {
+
             "name": "laravel/tinker",
             "version": "v2.4.0",
             "source": {
@@ -1569,7 +1574,10 @@
                 "secure",
                 "server"
             ]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 73d27bcff32f7fa27c2422fa445b8365cd98c6ae
         },
         {
             "name": "monolog/monolog",
@@ -1777,6 +1785,7 @@
             "time": "2020-04-10T16:34:50+00:00"
         },
         {
+
             "name": "nyholm/psr7",
             "version": "1.2.1",
             "source": {
@@ -1900,6 +1909,7 @@
             "time": "2019-11-29T22:36:02+00:00"
         },
         {
+
             "name": "paragonie/random_compat",
             "version": "v9.99.99",
             "source": {
@@ -2050,6 +2060,7 @@
             "time": "2020-03-21T18:07:53+00:00"
         },
         {
+
             "name": "phpseclib/phpseclib",
             "version": "2.0.27",
             "source": {
@@ -2237,6 +2248,7 @@
             "time": "2019-01-08T18:20:26+00:00"
         },
         {
+
             "name": "psr/http-factory",
             "version": "1.0.1",
             "source": {
@@ -3725,6 +3737,7 @@
             "time": "2020-04-15T15:59:10+00:00"
         },
         {
+
             "name": "symfony/psr-http-message-bridge",
             "version": "v2.0.0",
             "source": {
