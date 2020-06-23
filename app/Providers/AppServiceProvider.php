@@ -40,7 +40,11 @@ class AppServiceProvider extends ServiceProvider
     {
         return [
             'Auth',
-            'VerifyEmail'
+            'VerifyEmail',
+            'UserBioData',
+            'UserEducation',
+            'UserExperience',
+            'UserSkill'
         ];
     }
 }

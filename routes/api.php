@@ -14,11 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::prefix("v1/user")->group(function(){
+
     Route::namespace("V1\Auth")->group(function(){
 
         Route::post("/login", 'LoginController@index');
@@ -35,6 +32,36 @@ Route::prefix("v1/user")->group(function(){
             Route::post('/verify-token','ResetPasswordController@verifyToken');
             Route::post("/", 'ResetPasswordController@resetPassword');
         });
+
+    });
+});
+
+//Auth protected route
+Route::group(['middleware' => ['auth:api']], function () {
+
+    Route::prefix('v1/user')->group(function (){
+
+
+        Route::prefix('user-bio-data')->group(function (){
+            Route::get('/','V1\UserBiodataController@getBioData');
+            Route::post('/','V1\UserBiodataController@store');
+        });
+
+        Route::prefix('user-education')->group(function (){
+            Route::get('/','V1\UserEducationController@getUserEducation');
+            Route::post('/','V1\UserEducationController@store');
+        });
+
+        Route::prefix('user-experience')->group(function (){
+            Route::get('/','V1\UserExperienceController@getUserExperience');
+            Route::post('/','V1\UserExperienceController@store');
+        });
+
+        Route::prefix('user-skills')->group(function (){
+            Route::get('/','V1\UserSkillsController@getUserSkills');
+            Route::post('/','V1\UserSkillsController@store');
+        });
+
 
     });
 });
